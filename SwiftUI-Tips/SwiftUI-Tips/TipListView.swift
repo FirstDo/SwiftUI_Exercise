@@ -2,18 +2,24 @@ import SwiftUI
 
 enum ViewInfo: CaseIterable, Identifiable {
   case optionalModifier
+  case infiniteScrollView
   
   var id: UUID { return UUID() }
   
+  @ViewBuilder
   var view: some View {
     switch self {
-    case .optionalModifier: return OptionalModifierView()
+    case .optionalModifier:
+      OptionalModifierView()
+    case .infiniteScrollView:
+      InfiniteScrollView()
     }
   }
   
   var title: String {
     switch self {
     case .optionalModifier: return "OptionalModifier"
+    case .infiniteScrollView: return "InfiniteScrollView"
     }
   }
 }
