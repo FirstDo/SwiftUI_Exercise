@@ -3,6 +3,7 @@ import SwiftUI
 enum ViewInfo: CaseIterable, Identifiable {
   case optionalModifier
   case infiniteScrollView
+  case alertDialog
   
   var id: UUID { return UUID() }
   
@@ -13,6 +14,8 @@ enum ViewInfo: CaseIterable, Identifiable {
       OptionalModifierView()
     case .infiniteScrollView:
       InfiniteScrollView()
+    case .alertDialog:
+      AlertDialogView()
     }
   }
   
@@ -20,6 +23,7 @@ enum ViewInfo: CaseIterable, Identifiable {
     switch self {
     case .optionalModifier: return "OptionalModifier"
     case .infiniteScrollView: return "InfiniteScrollView"
+    case .alertDialog: return "AlertDialog"
     }
   }
 }
