@@ -4,6 +4,7 @@ enum ViewInfo: CaseIterable, Identifiable {
   case optionalModifier
   case infiniteScrollView
   case alertDialog
+  case customSlider
   
   var id: UUID { return UUID() }
   
@@ -16,6 +17,8 @@ enum ViewInfo: CaseIterable, Identifiable {
       InfiniteScrollView()
     case .alertDialog:
       AlertDialogView()
+    case .customSlider:
+      CustomSliverView()
     }
   }
   
@@ -24,6 +27,7 @@ enum ViewInfo: CaseIterable, Identifiable {
     case .optionalModifier: return "OptionalModifier"
     case .infiniteScrollView: return "InfiniteScrollView"
     case .alertDialog: return "AlertDialog"
+    case .customSlider: return "CustomSlider"
     }
   }
 }
